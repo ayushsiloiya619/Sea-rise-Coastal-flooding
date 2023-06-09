@@ -33,7 +33,8 @@ Sea Level Rise Data &amp; Coastal Flooding Data.
 
 16. If any exceptions occur during the execution of the code, they will be caught in the except block, and an error message will be printed.
 
-To summarize, this code fetches data related to sea level rise and coastal flooding from the NOAA API by making HTTP requests using the `requests` library. The data is then extracted and printed to display specific fields such as elevation, dates, latitude, longitude, etc.
+To summarize, this code fetches data related to sea level rise and coastal flooding from the NOAA API by making HTTP requests using the `requests` library. The data is then extracted and printed to display specific fields such as elevation, dates, latitude, longitude, etc.<br> 
+
 Notice: All content on this website, including text, graphics, logos, images, audio clips, and software, is the property of Ayush Siloiya and is protected by international copyright laws. Unauthorized use, reproduction, modification, distribution, or duplication of any content on this website is strictly prohibited and may result in legal action. Visitors to this website may not download, copy, or distribute any materials on this site without prior written permission from Ayush Siloiya.
 
 © 2023 Ayush Siloiya. All rights reserved.
