@@ -2,69 +2,9 @@
 <html>
 <head>
     <title>Sea Level Rise and Coastal Flooding</title>
-       <!-- <link rel="shortcut icon" type="x-icon" href="images/icon.png">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="YOUR-SCRIPT"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f3f3f3;
-        }
-        h1 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .chart-container {
-            background-color: #fff;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        .precautions {
-            margin-top: 10px;
-        }
-        .warning {
-            color: red;
-            font-weight: bold;
-        }
-        .station-select-container {
-            margin-bottom: 20px;
-        }
-        .news-section {
-    max-height: 300px;
-    overflow-y: scroll;
-    padding-right: 20px;
-}
-
-.scroll-button {
-    margin-top: 10px;
-}
-
-.article {
-    margin-bottom: 20px;
-}
-
-.article h3 {
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.article p {
-    color: #555;
-    margin-top: 0;
-}
-
-.article.highlight {
-    background-color: #ffeecc;
-}
-
-.article.highlight h3 {
-    color: #ff6600;
-}
-
+        //CSS is hidden due to the integrity policy of project by @Ayush Siloiya
     </style>
 </head>
 <body>
@@ -72,21 +12,6 @@
         <h2>Select Station:</h2>
         <select id="stationSelect" onchange="onStationChange()">
             <option value="COOP:010008">COOP:010008</option>
-            <option value="COOP:010116">COOP:010116</option>
-            <option value="COOP:010178">COOP:010178</option>
-            <option value="COOP:010163">COOP:010163</option>
-            <option value="COOP:010252">COOP:010252</option>
-            <option value="COOP:010260">COOP:010260</option>
-            <option value="COOP:010267">COOP:010267</option>
-            <option value="COOP:010184">COOP:010184</option>
-            <option value="COOP:010148">COOP:010148</option>
-            <option value="COOP:010117">COOP:010117</option>
-            <option value="COOP:010402">COOP:010402</option>
-            <option value="COOP:010422">COOP:010422</option>
-            <option value="COOP:010398">COOP:010398</option>
-            <option value="COOP:010377">COOP:010377</option>
-            <option value="COOP:010390">COOP:010390</option>
-            <option value="COOP:010369">COOP:010369</option>
         </select>
     </div>
 
@@ -98,8 +23,6 @@
             <h3>Precautions for Sea Level Rise:</h3>
             <ul>
                 <li>Monitor sea level rise forecasts and warnings.</li>
-                <li>Protect coastal ecosystems, such as mangroves and wetlands, that act as natural buffers against rising sea levels.</li>
-                <li>Implement coastal engineering solutions, such as building sea walls or dikes, to protect vulnerable areas.</li>
                 <li>Promote sustainable land use practices to minimize the impacts of sea level rise.</li>
                 <li>Educate communities about the risks of sea level rise and the importance of adaptation strategies.</li>
             </ul>
@@ -116,8 +39,6 @@
             <ul>
                 <li>Stay informed about coastal flood warnings and evacuation orders.</li>
                 <li>Develop an emergency plan and prepare an emergency kit with essential supplies.</li>
-                <li>Secure or move valuable belongings to higher ground.</li>
-                <li>Avoid driving through flooded areas.</li>
                 <li>Follow the guidance of local authorities and evacuate if instructed to do so.</li>
             </ul>
         </div>
@@ -227,42 +148,7 @@ function fetchStationData(stationId, chartId, detailsId, warningId, dataCategory
           seaLevelChart.update();
         }
       } else if (chartId === "coastalFloodingChart") {
-        if (!coastalFloodingChart) {
-          const chartContext = document.getElementById(chartId).getContext('2d');
-          coastalFloodingChart = new Chart(chartContext, {
-            type: 'bar',
-            data: {
-              labels: [dataCategory],
-              datasets: [{
-                label: 'Elevation',
-                data: [elevation],
-                backgroundColor: getBackgroundColor(elevation),
-              }]
-            },
-            options: {
-              scales: {
-                y: {
-                  beginAtZero: true
-                }
-              },
-              plugins: {
-                title: {
-                  display: true,
-                  text: `${dataCategory} Data - ${name}`
-                },
-                legend: {
-                  display: false
-                }
-              }
-            }
-          });
-        } else {
-          coastalFloodingChart.data.labels = [dataCategory];
-          coastalFloodingChart.data.datasets[0].data = [elevation];
-          coastalFloodingChart.data.datasets[0].backgroundColor = getBackgroundColor(elevation);
-          coastalFloodingChart.options.plugins.title.text = `${dataCategory} Data - ${name}`;
-          coastalFloodingChart.update();
-        }
+        //Similar as of Sea level Rise
       }
 
       // Display warning message based on elevation
@@ -367,11 +253,6 @@ function fetchNewsData() {
         descriptionElement.textContent = article.description;
         articleElement.appendChild(descriptionElement);
 
-        // Check if the article contains important keywords and add the highlight class
-        const keywords = ['sea', 'coastal', 'sea rise', 'coastal flooding', 'flooding'];
-        const isImportant = keywords.some(keyword => article.title.toLowerCase().includes(keyword));
-        if (isImportant) {
-          articleElement.classList.add('highlight');
         }
 
         newsSection.appendChild(articleElement);
